@@ -11,56 +11,85 @@
   <main class="container">
     <h1>Product Visualiser</h1>
 
-    <section class="controls">
-      <label>
-        Personalise Name Here
-        <input id="nameInput" type="text" placeholder="Type the name..." value="Alex" />
-      </label>
-      
-      <label>
-  Choose collection
-  <select id="collectionSelect">
-    <option value="ceramic">Ceramic Wall Collection</option>
-    <option value="wildBear">Wild Bear Collection</option>
-  </select>
-</label>
+```html
+<section class="controls">
+  <label class="field">
+    <span>Enter your name</span>
 
-      <div class="palette-group">
-        <div class="palette-title">Choose colour</div>
-        <div id="swatches" class="swatches" aria-label="Colour swatches"></div>
-        <div class="picker-row">
-          <input id="customColor" type="color" title="Custom colour" />
-          <button id="addCustom">Add</button>
-        </div>
-      </div>
-      <div class="letter-colour-group">
-  <div class="palette-title">Choose a colour for each letter</div>
+    <input
+      id="nameInput"
+      type="text"
+      maxlength="15"
+      placeholder="Type a name..."
+      value="Carter"
+    />
+  </label>
 
-  <div
-    id="letterColorControls"
-    class="letter-color-controls"
-  ></div>
-</div>
+  <label class="field">
+    <span>Choose your collection</span>
 
-      <label>
-        Upload product background (optional)
-        <input id="bgUpload" type="file" accept="image/*" />
-      </label>
+    <select id="collectionSelect">
+      <option value="ceramic">
+        Ceramic Wall Collection
+      </option>
 
-      <div class="buttons">
-        <button id="downloadBtn">Download PNG</button>
-        <button id="resetBtn">Reset</button>
-      </div>
-    </section>
+      <option value="wildBear">
+        Wild Bear Collection
+      </option>
+    </select>
+  </label>
 
-    <section class="preview">
-      <div class="canvas-wrapper">
-        <canvas id="previewCanvas" width="1200" height="400" aria-label="Preview canvas"></canvas>
-      </div>
-      <p class="hint">Preview shows how the name will look on the product. Replace sample colours with your official range in app.js.</p>
-    </section>
-  </main>
+  <div class="letter-customiser">
+    <div class="section-heading">
+      Choose each letter colour
+    </div>
 
-  <script src="app.js"></script>
+    <p class="section-description">
+      Click a colour beneath each letter to create your design.
+    </p>
+
+    <div
+      id="letterColorControls"
+      class="letter-color-controls"
+    ></div>
+  </div>
+
+  <label class="field">
+    <span>Upload a room photo (optional)</span>
+
+    <input
+      id="bgUpload"
+      type="file"
+      accept="image/*"
+    />
+  </label>
+
+  <div class="action-buttons">
+    <button id="resetBtn" type="button">
+      Reset
+    </button>
+
+    <button id="downloadBtn" type="button">
+      Download preview
+    </button>
+  </div>
+</section>
+
+<section class="preview-section">
+  <canvas
+    id="previewCanvas"
+    width="1200"
+    height="700"
+  ></canvas>
+
+  <p class="preview-disclaimer">
+    Preview colours are a guide only and may vary slightly between screens
+    and finished products.
+  </p>
+</section>
+
+<script src="app.js"></script>
+```
+
 </body>
 </html>
