@@ -42,6 +42,7 @@ const resetBtn = document.getElementById("resetBtn");
 let activeCollection = collectionSelect.value;
 let activePalette = collectionPalettes[activeCollection];
 let selectedColor = activePalette[0].hex;
+let letterColors = [];
 let bgImage = null;
 let mochiFontLoaded = false;
 
