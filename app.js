@@ -27,14 +27,17 @@ const collectionPalettes = {
   ],
 
   wildBear: [
-    { name: "Ivory White", hex: "#EEE9DF" },
-    { name: "Beige", hex: "#D2BFA4" },
-    { name: "Latte", hex: "#B99F82" },
-    { name: "Caramel", hex: "#A9784F" },
-    { name: "Chocolate Brown", hex: "#6E4935" },
-    { name: "Dark Brown", hex: "#443126" },
-    { name: "Desert Tan", hex: "#C6A77C" },
-    { name: "Nardo Grey", hex: "#9A9A94" }
+    { name: "Tan", hex: "#e7dcbc" },
+    { name: "Caramel", hex: "#a88764" },
+    { name: "Dark Brown", hex: "#796759" },
+    { name: "Chocolate", hex: "#3a2416" },
+    { name: "Latte", hex: "#ceb9a8" },
+    { name: "Charcoal", hex: "#000000" },
+    { name: "Ivory White", hex: "#ffffff" }
+    { name: "Soft Pink", hex: "#deb3ce" },
+    { name: "Ice Blue", hex: "#b0d6e1" },
+    { name: "Lilac", hex: "#a896c6" },
+    { name: "Lemon", hex: "#f3dc74" },
   ]
 };
 
