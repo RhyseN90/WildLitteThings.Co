@@ -3,14 +3,27 @@
 
 const collectionPalettes = {
   ceramic: [
-    { name: "Lilac", hex: "#C5A6D8" },
-    { name: "Soft Pink", hex: "#E8B6C2" },
-    { name: "Ice Blue", hex: "#AFCEDC" },
-    { name: "Apple Green", hex: "#A8C98E" },
-    { name: "Lemon", hex: "#E7D47A" },
-    { name: "Mandarin", hex: "#D98B55" },
-    { name: "Plum", hex: "#754B68" },
-    { name: "Marine", hex: "#416B7A" }
+    { name: "Soft Pink", hex: "#deb3ce" },
+    { name: "Ice Blue", hex: "#b0d6e1" },
+    { name: "Lilac", hex: "#a896c6" },
+    { name: "Apple Green", hex: "#cbdf97" },
+    { name: "Lemon", hex: "#f3dc74" },
+    { name: "Mandarin", hex: "#eda16f" },
+    { name: "Plum", hex: "#862550" },
+    { name: "Purple", hex: "#412b5c" },
+    { name: "Orange", hex: "#f09a43" },
+    { name: "Yellow", hex: "#f2ed65" },
+    { name: "Pink", hex: "#e16d76" },
+    { name: "Red", hex: "#af452b" },
+    { name: "Blue", hex: "#2455a2" },
+    { name: "Green", hex: "#68b85f" },
+    { name: "Tan", hex: "#e7dcbc" },
+    { name: "Caramel", hex: "#a88764" },
+    { name: "Dark Brown", hex: "#796759" },
+    { name: "Chocolate", hex: "#3a2416" },
+    { name: "Latte", hex: "#ceb9a8" },
+    { name: "Charcoal", hex: "#000000" },
+    { name: "Ivory White", hex: "#ffffff" }
   ],
 
   wildBear: [
