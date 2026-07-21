@@ -235,7 +235,7 @@ function buildLetterControls() {
     letterPreview.style.color = letterColours[index];
 
     letterPreview.addEventListener("click", () => {
-      selectLetter(index);
+    selectLetter(index, colourButton);
     });
 
     const colourButton = document.createElement("button");
