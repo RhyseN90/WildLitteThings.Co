@@ -72,6 +72,9 @@ async function loadMochiFont() {
     document.fonts.add(loadedFont);
     mochiFontLoaded = true;
 
+    // Force a small delay to ensure the font is registered
+    await document.fonts.ready;
+
     buildLetterControls();
     render();
   } catch (error) {
