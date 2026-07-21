@@ -16,79 +16,107 @@
     </p>
 </header>
     
-    <section class="preview-section">
-  <canvas
-    id="previewCanvas"
-    width="1200"
-    height="700"
-  ></canvas>
+  <section class="controls setup-section">
 
-  <p class="preview-disclaimer">
-    Preview colours are a guide only and may vary slightly between screens
-    and finished products.
-  </p>
-</section>
-<section class="controls">
-  <label class="field">
-    <span>Enter your name</span>
+    <div class="step-block">
+      <p class="step-label">Step 1</p>
 
-    <input
-      id="nameInput"
-      type="text"
-      maxlength="20"
-      placeholder="Type Name Here"
-      inputmode="text"
-      autocomplete="off"
-      spellcheck="false"
-    />
-  </label>
+      <label for="nameInput">Enter your little one's name</label>
 
-  <label class="field">
-    <span>Choose your collection</span>
-
-    <select id="collectionSelect">
-      <option value="ceramic">
-       Bubble Wall Collection
-      </option>
-
-      <option value="wildBear">
-        Wild Bear Collection
-      </option>
-    </select>
-  </label>
-
-  <div class="letter-customiser">
-    <div class="section-heading">
-      Choose each letter colour
+      <input
+        id="nameInput"
+        type="text"
+        maxlength="20"
+        placeholder="Type name here"
+        inputmode="text"
+        autocomplete="off"
+        spellcheck="false"
+      />
     </div>
 
-    <p class="section-description">
-      Click a letter to choose its colour.
+    <div class="step-block">
+      <p class="step-label">Step 2</p>
+
+      <label for="collectionSelect">Choose your collection</label>
+
+      <select id="collectionSelect">
+        <option value="ceramic">Ceramic Collection</option>
+        <option value="wildBear">Wild Bear Collection</option>
+      </select>
+    </div>
+
+  </section>
+
+  <section class="preview-section">
+
+    <div class="section-heading">
+      <p class="step-label">Preview</p>
+      <h2>Your Design</h2>
+    </div>
+
+    <canvas
+      id="previewCanvas"
+      width="1200"
+      height="600"
+    ></canvas>
+
+    <p class="preview-disclaimer">
+      Preview colours may vary slightly from the finished product.
     </p>
 
-    <div
-      id="letterColorControls"
-      class="letter-color-controls"
-    ></div>
+  </section>
 
-    <div id="sharedPalettePanel" class="shared-palette-panel hidden">
-      <div id="selectedLetterLabel" class="selected-letter-label"></div>
-      <div id="sharedPalette" class="shared-palette"></div>
+  <section class="controls colour-section">
+
+    <div class="section-heading">
+      <p class="step-label">Step 3</p>
+      <h2>Personalise Each Letter</h2>
+
+      <p class="section-description">
+        Tap a letter or colour circle to change its colour.
+      </p>
     </div>
-  </div>
 
-  <div class="action-buttons">
-    <button id="resetBtn" type="button">
-      Reset
-    </button>
+    <div class="letter-customiser">
 
-    <button id="downloadBtn" type="button">
-      Download preview
-    </button>
-  </div>
-</section>
-  </main>
+      <div id="letterColorControls"></div>
 
+      <div
+        id="sharedPalettePanel"
+        class="shared-palette-panel hidden"
+      >
+        <div id="selectedLetterLabel"></div>
+        <div id="sharedPalette"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="controls download-section">
+
+    <div class="section-heading">
+      <p class="step-label">Step 4</p>
+      <h2>Save Your Design</h2>
+
+      <p class="section-description">
+        Download your personalised preview to keep or share.
+      </p>
+    </div>
+
+    <div class="button-row">
+      <button id="resetBtn" type="button">
+        Reset
+      </button>
+
+      <button id="downloadBtn" type="button">
+        Download Preview
+      </button>
+    </div>
+
+  </section>
+
+</main>
 <script src="app.js"></script>
 
 </body>
