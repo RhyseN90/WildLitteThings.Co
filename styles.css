@@ -186,35 +186,179 @@ canvas{max-width:100%;border-radius:6px}
   color: #6e665f;
 }
 
-.letter-palette {
-  display: grid;
-  grid-template-columns: repeat(4, 28px);
-  gap: 7px;
+/* ========================================
+   Letter colour strip
+======================================== */
+
+.letter-customiser {
+  padding: 20px;
+  border: 1px solid #e4ddd6;
+  border-radius: 16px;
+  background: #faf8f5;
 }
 
-.letter-colour-button {
-  width: 28px;
-  height: 28px;
+.section-heading {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.section-description {
+  margin: 6px 0 20px;
+  color: #6e665f;
+  font-size: 0.9rem;
+}
+
+.letter-color-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.letter-control {
+  min-width: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.letter-character {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Mochi", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.current-colour-button {
+  width: 34px;
+  height: 34px;
   padding: 0;
-  border: 2px solid transparent;
+  border: 3px solid #ffffff;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(60, 52, 47, 0.25),
+    0 3px 8px rgba(60, 52, 47, 0.12);
   transition:
     transform 0.15s ease,
-    border-color 0.15s ease,
     box-shadow 0.15s ease;
 }
 
-.letter-colour-button:hover {
+.current-colour-button:hover {
+  transform: scale(1.1);
+}
+
+.letter-control.selected .current-colour-button {
+  box-shadow:
+    0 0 0 3px #4f453e,
+    0 4px 10px rgba(60, 52, 47, 0.2);
+}
+
+.letter-colour-name {
+  max-width: 70px;
+  min-height: 26px;
+  color: #716861;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.shared-palette-panel {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e3ddd7;
+}
+
+.shared-palette-panel.hidden {
+  display: none;
+}
+
+.selected-letter-label {
+  margin: 0 0 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.shared-palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+}
+
+.shared-colour-button {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(60, 52, 47, 0.22);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.shared-colour-button:hover {
   transform: scale(1.12);
 }
 
-.letter-colour-button.selected {
-  border-color: #ffffff;
+.shared-colour-button.selected {
   box-shadow:
-    0 0 0 2px #4f453e,
-    0 2px 6px rgba(0, 0, 0, 0.2);
+    0 0 0 3px #4f453e,
+    0 3px 8px rgba(60, 52, 47, 0.2);
+}
+
+.shared-colour-button.selected::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.empty-letter-message {
+  width: 100%;
+  margin: 0;
+  color: #716861;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .letter-color-controls {
+    gap: 12px;
+  }
+
+  .letter-control {
+    min-width: 44px;
+  }
+
+  .letter-character {
+    min-height: 42px;
+    font-size: 1.7rem;
+  }
+
+  .current-colour-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .shared-colour-button {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .action-buttons {
