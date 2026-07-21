@@ -304,7 +304,7 @@ canvas{max-width:100%;border-radius:6px}
 
 .site-banner {
     width: 100%;
-    max-width: 700px;
+    max-width: none;
     height: auto;
     display: block;
     margin: 0 auto;
