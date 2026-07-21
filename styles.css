@@ -284,18 +284,29 @@ h1{margin:0 0 12px 0;font-size:20px}
   color: #ffffff;
 }
 
-.preview-section {
+.preview-section,
+.setup-section,
+.colour-section,
+.download-section {
   width: 100%;
-  margin: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
 }
 
 #previewCanvas {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  background: #f4f2ef;
-  box-shadow: 0 8px 30px rgba(41, 35, 31, 0.08);
+  aspect-ratio: 2 / 1;
+  border-radius: 18px;
 }
 
 .preview-disclaimer {
