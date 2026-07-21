@@ -388,51 +388,24 @@ h1{margin:0 0 12px 0;font-size:20px}
   min-width: 160px;
 }
 @media (max-width: 650px) {
-  body {
-    padding: 12px;
-  }
-
-  .container {
-    gap: 16px;
-  }
-
- .site-header {
-  margin-left: -12px;
-  margin-right: -12px;
-  margin-top: -12px;
-  margin-bottom: 0;
-}
-
-  .controls {
-    padding: 14px;
-  }
-
-  .letter-customiser {
-    padding: 14px;
+  .preview-section,
+  .setup-section,
+  .colour-section,
+  .download-section {
+    max-width: 100%;
   }
 
   .preview-section {
-    order: initial;
+    padding: 16px;
   }
 
-  #previewCanvas {
-    border-radius: 12px;
-  }
-
-  .action-buttons {
-    flex-direction: column;
-  }
-
-  .action-buttons button {
-    width: 100%;
-  }
-
-  .letter-color-controls {
-    gap: 12px;
+  #letterColorControls {
+    gap: 10px;
   }
 
   .letter-control {
-    min-width: 44px;
+    min-width: 46px;
+    padding: 6px 4px;
   }
 
   .letter-character {
@@ -440,9 +413,23 @@ h1{margin:0 0 12px 0;font-size:20px}
     font-size: 1.7rem;
   }
 
-  .current-colour-button {
-    width: 30px;
-    height: 30px;
+  .shared-palette-panel {
+    position: fixed;
+    left: 50% !important;
+    top: auto !important;
+    bottom: 20px;
+    width: calc(100vw - 32px);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .shared-palette-panel::before {
+    display: none;
+  }
+
+  #sharedPalette {
+    grid-template-columns: repeat(6, 36px);
+    gap: 9px;
   }
 
   .shared-colour-button {
