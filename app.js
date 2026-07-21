@@ -164,7 +164,7 @@ function buildLetterControls() {
 
     const message = document.createElement("p");
 
-    message.className = "section-description";
+    message.className = "empty-letter-message";
     message.textContent = "Enter a name above to begin choosing colours.";
 
     letterColorControls.appendChild(message);
