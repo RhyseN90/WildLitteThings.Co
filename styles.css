@@ -383,7 +383,45 @@ h1{margin:0 0 12px 0;font-size:20px}
   flex: 1;
   min-width: 160px;
 }
+
+.setup-section {
+  background: #f7eee9;
+  border: 2px solid #d9a98f;
+}
+
+.colour-section {
+  background: #f1edf7;
+  border: 2px solid #bca7d4;
+}
+
+.download-section {
+  background: #eef5ec;
+  border: 2px solid #a9c39e;
+}
+
+.preview-section {
+  background: #ffffff;
+  border: 2px solid #c9a98f;
+}
+
+.setup-section,
+.preview-section,
+.colour-section,
+.download-section {
+  border-radius: 22px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 650px) {
+  .setup-section,
+  .preview-section,
+  .colour-section,
+  .download-section {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
   #letterColorControls {
     display: flex;
     flex-wrap: wrap;
@@ -436,4 +474,5 @@ h1{margin:0 0 12px 0;font-size:20px}
     width: 36px;
     height: 36px;
   }
+
 }
