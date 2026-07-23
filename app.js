@@ -399,7 +399,7 @@ function updateOrderSummary() {
 
   summaryColours.innerHTML = "";
 
-  if (!design.name) {
+  if (!design.colours || design.colours.length === 0) {
     summaryColours.textContent =
       "Enter a name to view your colour selection.";
 
