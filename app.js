@@ -406,7 +406,7 @@ function updateOrderSummary() {
 
   summaryColours.innerHTML = "";
 
-  if (!design.colours.length) {
+  if (!design.name) {
     summaryColours.textContent =
       "Enter a name to view your colour selection.";
 
@@ -423,12 +423,15 @@ function updateOrderSummary() {
 
     const letter = document.createElement("span");
     letter.className = "summary-letter";
-    letter.textContent = item.letter;
+    letter.textContent = `${item.letter} •`;
 
     const colourName = document.createElement("span");
     colourName.textContent = item.name;
 
-    row.append(dot, letter, colourName);
+    row.appendChild(dot);
+    row.appendChild(letter);
+    row.appendChild(colourName);
+
     summaryColours.appendChild(row);
   });
 }
