@@ -330,7 +330,109 @@ function buildSharedPalette() {
     sharedPalette.appendChild(button);
   });
 }
+function normaliseHex(hex) {
+  return String(hex || "").trim().toLowerCase();
+}
 
+function getCurrentPalette() {
+  return collectionPalettes[collectionSelect.value] || [];
+}
+
+function getColourDetails(hex) {
+  const normalisedHex = normaliseHex(hex);
+
+  const matchingColour = getCurrentPalette().find(
+    colour => normaliseHex(colour.hex) === normalisedHex
+  );
+
+  return {
+    name: matchingColour ? matchingColour.name : "Colour not selected",
+    hex: hex || "#ffffff"
+  };
+}
+
+function getSelectedCollectionName() {
+  const selectedOption =
+    collectionSelect.options[collectionSelect.selectedIndex];
+
+  return selectedOption
+    ? selectedOption.textContent.trim()
+    : "Collection not selected";
+}
+
+function createDesignSummary() {
+  const enteredName = nameInput.value.trim().toUpperCase();
+  const collectionName = getSelectedCollectionName();
+
+  const colourSelections = [];
+
+  [...enteredName].forEach((character, index) => {
+    if (character === " ") {
+      return;
+    }
+
+    const colour = getColourDetails(letterColours[index]);
+
+    colourSelections.push({
+      letter: character,
+      colourName: colour.name,
+      hex: colour.hex
+    });
+  });
+
+  const copiedText = enteredName
+    ? [
+        `Name: ${enteredName}`,
+        `Collection: ${collectionName}`,
+        `Colours: ${colourSelections
+          .map(item => `${item.letter}-${item.colourName}`)
+          .join(", ")}`
+      ].join("\n")
+    : "Enter a name and select your colours before copying your design.";
+
+  return {
+    enteredName,
+    collectionName,
+    colourSelections,
+    copiedText
+  };
+}
+
+function updateOrderSummary() {
+  const design = createDesignSummary();
+
+  summaryName.textContent = design.enteredName || "Enter your name";
+  summaryCollection.textContent = design.collectionName;
+  copyTextPreview.textContent = design.copiedText;
+
+  summaryColours.innerHTML = "";
+
+  if (!design.colourSelections.length) {
+    summaryColours.textContent =
+      "Enter a name to view your colour selection.";
+
+    return;
+  }
+
+  design.colourSelections.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "summary-colour-row";
+
+    const dot = document.createElement("span");
+    dot.className = "summary-colour-dot";
+    dot.style.backgroundColor = item.hex;
+
+    const letter = document.createElement("span");
+    letter.className = "summary-letter";
+    letter.textContent = item.letter;
+
+    const colourName = document.createElement("span");
+    colourName.textContent = item.colourName;
+
+    row.append(dot, letter, colourName);
+    summaryColours.appendChild(row);
+  });
+}
 // Change collection and replace every letter colour with colours from the newly selected collection.
 collectionSelect.addEventListener("change", () => {
   activeCollection = collectionSelect.value;
@@ -526,6 +628,8 @@ drawDefaultBackground(width, height);
       currentX += characterWidth;
     }
   );
+
+updateOrderSummary();
 }
 
 // Rounded rectangle helper.
