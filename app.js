@@ -397,9 +397,6 @@ function updateOrderSummary() {
   summaryCollection.textContent =
     design.collection;
 
-  copyTextPreview.textContent =
-    design.copyText;
-
   summaryColours.innerHTML = "";
 
   if (!design.name) {
