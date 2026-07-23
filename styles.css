@@ -575,3 +575,101 @@ h1{margin:0 0 12px 0;font-size:20px}
     padding: 14px;
   }
 }
+/* Step 4 – Order summary */
+.order-section {
+  display: block;
+  visibility: visible;
+  width: 100%;
+  margin: 32px 0;
+  padding: 28px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e8e1dc;
+  border-radius: 22px;
+}
+
+.step-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #4f4641;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.step-heading h2 {
+  margin: 0 0 6px;
+}
+
+.step-heading p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.order-summary {
+  display: block;
+  margin-top: 22px;
+  padding: 24px;
+  background: #faf8f6;
+  border-radius: 18px;
+}
+
+.summary-group {
+  display: block;
+}
+
+.summary-group + .summary-group {
+  margin-top: 22px;
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summary-group p {
+  display: block;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.order-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.copy-confirmation {
+  min-height: 24px;
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .order-section {
+    padding: 20px;
+  }
+
+  .order-actions {
+    flex-direction: column;
+  }
+
+  .order-actions button {
+    width: 100%;
+  }
+}
